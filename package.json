@@ -1,0 +1,6 @@
+{
+    "scripts": {
+      "heroku-prebuild": "cd server",
+      "start": "node index.js"
+    }
+  }
