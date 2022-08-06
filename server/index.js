@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send({ hi: 'Zymio app 3' });
+    res.send({ hi: 'Zymio app - test auto deploy functionality' });
 });
 
 
