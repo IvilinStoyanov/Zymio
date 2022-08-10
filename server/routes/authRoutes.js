@@ -4,7 +4,7 @@ const keys = require('../config/keys');
 module.exports = app => {
     app.get('/', (req, res) => {
         
-        res.send({ name: 'Zymio test', URI: keys.mongoURI, GoogleCientID: keys.googleClientID, googleSecret: keys.googleClientSecret, cookie: keys.cookieKey });
+        res.send({ name: 'Zymio test db con', URI: keys.mongoURI, GoogleCientID: keys.googleClientID, googleSecret: keys.googleClientSecret, cookie: keys.cookieKey });
     });
 
     app.get(
