@@ -9,6 +9,7 @@ function App() {
         <p>
            Welcome to Zymio
         </p>
+        <a href="/auth/google">Sign in with Google</a>
         <a
           className="App-link"
           href="https://reactjs.org"
