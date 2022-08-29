@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Header extends Component {
+    renderContent() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return (
+                    <li><a href="/auth/google">Login with Google</a></li>
+                );
+            default:
+                return <li><a href='/api/logout'>Logout</a></li>;
+        }
+    }
     render() {
         return (
             <nav>
@@ -9,9 +22,7 @@ class Header extends Component {
                         <a className="brand-logo">Zymio</a>
                     </div>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li>
-                            <a>Login with Google</a>
-                        </li>
+                        {this.renderContent()}
                     </ul>
                 </div>
             </nav>
@@ -19,4 +30,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+function mapStateToProbs({ auth }) {
+    return { auth };
+}
+
+export default connect(mapStateToProbs)(Header);

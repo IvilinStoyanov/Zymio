@@ -10,7 +10,6 @@ const Landing = () => <h2>Header Landing</h2>;
 
 class App extends Component {
 componentDidMount() {
-    console.log("Did mount called");
     this.props.fetchUser();
 }
 
