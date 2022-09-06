@@ -2,11 +2,6 @@ const passport = require('passport');
 const keys = require('../config/keys');
 
 module.exports = app => {
-    app.get('/', (req, res) => {
-        
-        res.send({ name: 'Zymio'});
-    });
-
     app.get(
         '/auth/google',
         passport.authenticate('google', {
