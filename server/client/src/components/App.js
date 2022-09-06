@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-const App = () => {
-    return (
-        <div>
-            Zymio
-        </div>
-    );
+import Header from './Header';
+import Landing from './Landing';
+const Dashboard = () => <h2>Dashboard</h2>;
+const SurveyNew = () => <h2>Header Servey New</h2>;
+
+class App extends Component {
+componentDidMount() {
+    this.props.fetchUser();
+}
+
+    render() {
+        return (
+            <div>
+                <BrowserRouter>
+                    <Header />
+                    <div>
+                        <Route path="/" exact component={Landing} />
+                        <Route path="/surveys" exact component={Dashboard} />
+                        <Route path="/surveys/new" component={SurveyNew} />
+                    </div>
+                </BrowserRouter>
+            </div>
+        );
+    };
 };
 
-export default App;
+export default connect(null, actions)(App);
