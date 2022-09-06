@@ -15,10 +15,12 @@ class Header extends Component {
             default:
                 return [
                     <li key="payment"><Payments /></li>,
+                    <li key="credits">Credits: {this.props.auth.credits}</li>,
                     <li key="logout"><a href='/api/logout'>Logout</a></li>
                 ];
         }
     }
+
     render() {
         return (
             <nav>
