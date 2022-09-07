@@ -18,8 +18,8 @@ module.export = app => {
                 body,
                 recipient: recipients.split(',').map(email => ({ email })),
                 _user: req.user.id,
-                dateSent: new Date(),
-                lastResponded: new Date()
+                dateSent: Date.now(),
+                lastResponded: Date.now()
             });
         });
 };
