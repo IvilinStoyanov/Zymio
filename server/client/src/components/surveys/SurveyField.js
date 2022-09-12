@@ -1,10 +1,11 @@
 import React from 'react';
 
-const SurveryField = ({ input, label }) => {
+const SurveryField = ({ input, label, meta: { error, touched } }) => {
     return (
         <div>
-            <label>{ label }</label>
+            <label>{label}</label>
             <input {...input} />
+            {touched && error}
         </div>
     );
 };
