@@ -5,7 +5,9 @@ const SurveryField = ({ input, label, meta: { error, touched } }) => {
         <div>
             <label>{label}</label>
             <input {...input} />
-            {touched && error}
+            <div className='red-text' style={{ marginBottom: '10px' }}>
+                {touched && error}
+            </div>
         </div>
     );
 };

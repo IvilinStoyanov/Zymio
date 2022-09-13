@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import SurveryField from './SurveyField';
+import validateEmails from '../../util/validateEmails';
 
 const FIELDS = [
     { label: 'Survey Title', name: 'title' },
-    { label: 'Survey Line', name: 'line' },
+    { label: 'Survey Line', name: 'subject' },
     { label: 'Email Body', name: 'body' },
     { label: 'Recipient List', name: 'emails' },
 ];
@@ -36,10 +37,14 @@ class SurveyForm extends Component {
 
 function validate(values) {
     const errors = {};
+   
+    errors.emails = validateEmails(values.emails || '');
 
-    if (!values.title) {
-        errors.title = 'Title is required';
-    }
+    _.each(FIELDS, ({ label, name }) => {
+        if (!values[name]) {
+            errors[name] = `${label.toLowerCase()} is required`;
+        }
+    });
 
     return errors;
 
