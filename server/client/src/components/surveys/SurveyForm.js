@@ -4,18 +4,13 @@ import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import SurveryField from './SurveyField';
 import validateEmails from '../../util/validateEmails';
+import formFields from './formFields';
 
-const FIELDS = [
-    { label: 'Survey Title', name: 'title' },
-    { label: 'Survey Line', name: 'subject' },
-    { label: 'Email Body', name: 'body' },
-    { label: 'Recipient List', name: 'emails' },
-];
 
 class SurveyForm extends Component {
     renderFields() {
         return (
-            _.map(FIELDS, ({ label, name }) => {
+            _.map(formFields, ({ label, name }) => {
                 return <Field key={name} label={label} type="text" name={name} component={SurveryField} />;
             })
         );
@@ -40,7 +35,7 @@ function validate(values) {
    
     errors.emails = validateEmails(values.emails || '');
 
-    _.each(FIELDS, ({ label, name }) => {
+    _.each(formFields, ({ label, name }) => {
         if (!values[name]) {
             errors[name] = `${label.toLowerCase()} is required`;
         }
