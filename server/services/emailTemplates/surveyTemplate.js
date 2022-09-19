@@ -27,7 +27,7 @@ module.exports = survey => {
                                         <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
                                             ${survey.body}</p>
 
-                                        <a href="${keys.redirectDomain}/api/surveys/feedback"
+                                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/bad"
                                             style="background:#4b8967;
                                             text-decoration:none !important;
                                             display:inline-block;
@@ -41,7 +41,7 @@ module.exports = survey => {
                                             border-radius:6px;">
                                             Bad
                                         </a>
-                                        <a href="${keys.redirectDomain}/api/surveys/feedback"
+                                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/good"
                                             style="background:#4b8967;
                                             text-decoration:none !important;
                                             display:inline-block;
