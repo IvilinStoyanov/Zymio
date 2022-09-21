@@ -2,7 +2,7 @@ import React from 'react';
 
 const SurveryField = ({ input, label, meta: { error, touched } }) => {
     return (
-        <div>
+        <div >
             <label>{label}</label>
             <input {...input} />
             <div className='red-text' style={{ marginBottom: '10px' }}>

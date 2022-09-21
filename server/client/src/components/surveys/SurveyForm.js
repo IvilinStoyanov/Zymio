@@ -18,7 +18,7 @@ class SurveyForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className='container' style={{padding: '20px 0'}}>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
                     {this.renderFields()}
                     <Link to="/surveys" className="yellow darken-3 btn-flat white-text">Cancel</Link>

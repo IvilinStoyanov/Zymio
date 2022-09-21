@@ -16,7 +16,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
     });
 
     return (
-        <div>
+        <div className='container' style={{padding: '20px 0'}}>
             <h5 style={{ marginBottom: '20px' }}>Please revies your entities</h5>
             {fields}
             <button
