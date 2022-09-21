@@ -10,13 +10,13 @@ class Header extends Component {
                 return;
             case false:
                 return (
-                    <li><a href="/auth/google">Login with Google</a></li>
+                    <li><a href="/auth/google" className='black-text'>Login with Google</a></li>
                 );
             default:
                 return [
                     <li key="payment"><Payments /></li>,
                     <li key="credits">Credits: {this.props.auth.credits}</li>,
-                    <li key="logout"><a href='/api/logout'>Logout</a></li>
+                    <li key="logout"><a href='/api/logout' className='black-text'>Logout</a></li>
                 ];
         }
     }
@@ -27,7 +27,7 @@ class Header extends Component {
                 <div className="nav-wrapper">
                     <div>
                         <Link to={this.props.auth ? '/surveys' : '/'}
-                            className="brand-logo left" style={{ padding: '0 12px' }}
+                            className="brand-logo left black-text" style={{ padding: '0 12px' }}
                         >Zymio</Link>
                     </div>
                     <ul className="right">
