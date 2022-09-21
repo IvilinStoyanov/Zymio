@@ -9,15 +9,12 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
 import App from './components/App';
-import reducers from './reducers';
-
-import axios from 'axios';
-window.axios = axios;
+import reducer from './reducers';
 
 const store =
     configureStore({
-        reducer: reducers,
-        middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false }),
+        reducer,
+        middleware: getDefaultMiddleware => getDefaultMiddleware(),
     });
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
