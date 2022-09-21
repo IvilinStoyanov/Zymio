@@ -1,6 +1,7 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import './theme/style.scss';
 import './theme/helper.scss';
+import './theme/colors.scss';
 
 
 
