@@ -27,10 +27,10 @@ class Header extends Component {
                 <div className="nav-wrapper">
                     <div>
                         <Link to={this.props.auth ? '/surveys' : '/'}
-                            className="brand-logo"
+                            className="brand-logo left" style={{ padding: '0 12px' }}
                         >Zymio</Link>
                     </div>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <ul className="right">
                         {this.renderContent()}
                     </ul>
                 </div>
