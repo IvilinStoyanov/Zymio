@@ -7,6 +7,14 @@ nav {
     background-color: white;
 }
 
+.sidenav {
+  padding: 15px !important;
+}
+
+.sidenav-open {
+  transform: translateX(0%) !important;
+}
+
 li {
   padding: 0 5px !important;
 }
@@ -18,6 +26,10 @@ input {
 button,
 a {
   border-radius: 4px !important;
+}
+
+.sidenav li> a {
+  padding: 0;
 }
 
 .bg-bottom {

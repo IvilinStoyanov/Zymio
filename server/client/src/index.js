@@ -2,8 +2,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import './theme/style.scss';
 import './theme/helper.scss';
 import './theme/colors.scss';
-
-
+import './theme/utilities.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
