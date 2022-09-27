@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import Payments from './Payments';
 
 class Header extends Component {
+    state = {
+        isMenuVisible: false
+    };
+
     renderContent() {
         switch (this.props.auth) {
             case null:
@@ -21,20 +25,33 @@ class Header extends Component {
         }
     }
 
+    triggerMenu() {
+        this.setState({ isMenuVisible: !this.state.isMenuVisible });
+    }
+
     render() {
         return (
-            <nav>
-                <div className="nav-wrapper">
-                    <div>
-                        <Link to={this.props.auth ? '/surveys' : '/'}
-                            className="brand-logo left black-text" style={{ padding: '0 12px' }}
-                        >Zymio</Link>
+            <div>
+                <nav>
+                    <div className="nav-wrapper">
+                        <div>
+                            <Link to={this.props.auth ? '/surveys' : '/'}
+                                className="brand-logo left black-text" style={{ padding: '0 12px' }}
+                            >Zymio</Link>
+                        </div>
+                        <a href="#" className='sidenav-trigger right' onClick={() => this.triggerMenu()}><i className='black-text material-icons'>menu</i></a>
+                        <ul className="right hide-on-med-and-down">
+                            {this.renderContent()}
+                        </ul>
+
                     </div>
-                    <ul className="right">
-                        {this.renderContent()}
-                    </ul>
-                </div>
-            </nav>
+                </nav>
+                <ul className={this.state.isMenuVisible ? 'sidenav sidenav-open' : 'sidenav'}>
+                    <div><i className='black-text material-icons hover right' onClick={() => this.triggerMenu()}>close</i></div>
+                    <h5 style={{marginTop: 0}}>Zymio</h5>
+                    {this.renderContent()}
+                </ul>
+            </div>
         );
     }
 }
